@@ -1,4 +1,7 @@
 {
+    "variables": {
+        "gcp_machine_type": "f1-micro"
+    },
     "builders": [
         {
             "type": "googlecompute",
@@ -8,7 +11,12 @@
             "source_image_family": "ubuntu-1604-lts",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
-            "machine_type": "f1-micro"
+            "machine_type": "{{user `gcp_machine_type`}}",
+	    "disk_size": "20",
+	    "disk_type": "pd-standard",
+	    "image_description": "reddit_image",
+	    "tags": "puma-server",
+	    "network": "default"
         }
     ],
     "provisioners": [
