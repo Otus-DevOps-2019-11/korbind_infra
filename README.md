@@ -1,7 +1,11 @@
 # korbind_infra
 korbind Infra repository
 
-#HW cloud-testapp
+# HW terraform-1
+При добавлении ключа для appuser_web через веб интерфейс и последующим выполнением terraform apply состояние terraform не
+меняется и изменения произведенные через веб не фиксируются.
+
+# HW cloud-testapp
 testapp_IP = 34.90.24.189
 testapp_port = 9292
 
@@ -14,7 +18,7 @@ gcloud compute instances create reddit-app --boot-disk-size=10GB --image-family 
 gcloud compute firewall-rules create default-puma-server --target-tags puma-server --source-ranges 0.0.0.0/0 --rules tcp:9292 --action allow
 ```
 
-#HW cloud-bastion 
+# HW cloud-bastion 
 bastion_IP = 35.214.199.112 
 someinternalhost_IP = 10.164.0.3 
 
